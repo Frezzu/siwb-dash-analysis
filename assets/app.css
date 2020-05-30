@@ -47,3 +47,28 @@ html {
 .years-of-code--config > *[type='number'] {
     width: 60px;
 }
+
+.piecharts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.piechart-component {
+    min-height: 486px;
+    display: flex;
+    flex-direction: column;
+}
+
+.piechart-component--dropdown {
+    width: 70%;
+}
+
+.piechart-component--question {
+    flex: 1;
+    color: grey;
+    font-size: 1.1em;
+    padding-top: 1.5em;
+    text-align: center;
+    font-style: italic;
+}

@@ -29,3 +29,7 @@ html {
     font-size: 1.1em;
     font-style: italic;
 }
+
+.dash-table-container {
+    overflow-x: auto;
+}

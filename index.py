@@ -5,11 +5,15 @@ import dash
 
 import dash_core_components as dcc
 import dash_html_components as html
+import pandas as pd
 
 from app import app, data, categoryColumns
 from components.data_viewer import DataViewer
-from components.years_of_code_component import YearsOfCodeComponent
+from components.configuration_panel import ConfigurationPanel
 from components.pie_chart_component import PieChartComponent
+from components.bar_chart_component import BarChartComponent
+from components.years_of_code_component import YearsOfCodeComponent
+from dash.dependencies import Input, Output
 
 
 app.layout = html.Div(
@@ -29,6 +33,7 @@ app.layout = html.Div(
         ),
         html.Div(
             [
+                ConfigurationPanel.render(),
                 YearsOfCodeComponent.render(),
             ],
             className='first-section'
@@ -44,6 +49,38 @@ app.layout = html.Div(
             ],
             className='piecharts-container'
         ),
+        dcc.Tabs(id='tabs-example', value='language', children=[
+            dcc.Tab(
+                BarChartComponent.render(
+                    ['LanguageWorkedWith', 'LanguageDesireNextYear']),
+                label='Language',
+                value='language'
+            ),
+            dcc.Tab(
+                BarChartComponent.render(
+                    ['DatabaseWorkedWith', 'DatabaseDesireNextYear']),
+                label='Database',
+                value='database'
+            ),
+            dcc.Tab(
+                BarChartComponent.render(
+                    ['PlatformWorkedWith', 'PlatformDesireNextYear']),
+                label='Platform',
+                value='platform'
+            ),
+            dcc.Tab(
+                BarChartComponent.render(
+                    ['WebFrameWorkedWith', 'WebFrameDesireNextYear']),
+                label='Web Framework',
+                value='webframework'
+            ),
+            dcc.Tab(
+                BarChartComponent.render(
+                    ['MiscTechWorkedWith', 'MiscTechDesireNextYear']),
+                label='Misc Tech',
+                value='misctech'
+            ),
+        ]),
         DataViewer.render()
     ],
     className='app-container',

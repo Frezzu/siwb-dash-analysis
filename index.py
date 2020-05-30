@@ -8,6 +8,7 @@ import dash_html_components as html
 
 from app import app, data, categoryColumns
 from components.data_viewer import DataViewer
+from components.years_of_code_component import YearsOfCodeComponent
 
 
 app.layout = html.Div(
@@ -24,6 +25,12 @@ app.layout = html.Div(
                        className='authors')
             ],
             className='app-header'
+        ),
+        html.Div(
+            [
+                YearsOfCodeComponent.render(),
+            ],
+            className='first-section'
         ),
         DataViewer.render()
     ],

@@ -9,6 +9,7 @@ import dash_html_components as html
 from app import app, data, categoryColumns
 from components.data_viewer import DataViewer
 from components.years_of_code_component import YearsOfCodeComponent
+from components.pie_chart_component import PieChartComponent
 
 
 app.layout = html.Div(
@@ -31,6 +32,17 @@ app.layout = html.Div(
                 YearsOfCodeComponent.render(),
             ],
             className='first-section'
+        ),
+        html.Div(
+            [
+                PieChartComponent.render(
+                    'OpSys', categoryColumns, 'OpSys'),
+                PieChartComponent.render(
+                    'DevEnviron', categoryColumns, 'DevEnviron'),
+                PieChartComponent.render(
+                    'Containers', categoryColumns, 'Containers')
+            ],
+            className='piecharts-container'
         ),
         DataViewer.render()
     ],

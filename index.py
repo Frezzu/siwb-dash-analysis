@@ -12,7 +12,19 @@ from app import app, data, categoryColumns
 
 app.layout = html.Div(
     [
-        html.H1('Hello world')
+        dcc.Store(id='config-store', data={
+            'selectedCountries': [],
+            'selectedAgeRange': [],
+            'selectedGenders': []
+        }),
+        html.Div(
+            [
+                html.H1('StackOverflow Survey 2019'),
+                html.P('Authors: Bartłomiej Mroziński, Piotr Pawlik',
+                       className='authors')
+            ],
+            className='app-header'
+        ),
     ],
     className='app-container',
 )

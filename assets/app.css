@@ -14,3 +14,18 @@ html {
     -moz-box-shadow:3px 2px 6px 1px #C9C9C9;
     padding: 15px 15px;
 }
+
+.app-container {
+    box-sizing: content-box;
+    margin: 5em;
+}
+
+.app-container > div {
+    margin-bottom: 25px;
+}
+
+.authors {
+    color: grey;
+    font-size: 1.1em;
+    font-style: italic;
+}

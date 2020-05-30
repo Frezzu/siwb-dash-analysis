@@ -33,3 +33,17 @@ html {
 .dash-table-container {
     overflow-x: auto;
 }
+
+.years-of-code--config {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.years-of-code--config > * {
+    margin-right: 10px;
+}
+
+.years-of-code--config > *[type='number'] {
+    width: 60px;
+}

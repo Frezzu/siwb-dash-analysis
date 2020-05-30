@@ -6,8 +6,8 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 
-
 from app import app, data, categoryColumns
+from components.data_viewer import DataViewer
 
 
 app.layout = html.Div(
@@ -25,6 +25,7 @@ app.layout = html.Div(
             ],
             className='app-header'
         ),
+        DataViewer.render()
     ],
     className='app-container',
 )
